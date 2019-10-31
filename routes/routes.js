@@ -40,7 +40,13 @@ router.get("/kanban/:id", (req, res) => {
       }
     }
 
-    res.render("kanban", { tasks: tasks });
+    res.render("kanban", 
+    { 
+        tasks: tasks,
+        name : tasks[0].name,
+        projectId : tasks[0].project_id
+    }
+    );
   });
 
 //   <input type="hidden" value={{projectId}} name="projectId" />
