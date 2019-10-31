@@ -2,12 +2,55 @@
 	<div class="card-header">{{task}}</div>
 	<div class="card-body">
 		<p class="card-text">Task Description</p>
-		<a href="#popup{{taskId}}" class="btn btn-primary">Edit</a>
-		<a href="#" class="btn btn-primary">Delete</a>
+
+
+
+	<div class= "row" >
+			<div class="col-md-6">
+				<button href="#formEditTask{{taskId}}" data-toggle="collapse" class="btn btn-primary">Edit</button>
+
+			</div>
+			<div class="col-md-6">
+				<button href="#" data-toggle="collapse" class="btn btn-primary">Delete</button>
+
+			</div>
 	</div>
+
+		<div class="collapse dropdown m-3" id="formEditTask{{taskId}}">
+			<form class="mx-auto" action="/update-task/{{project_id}}/{{taskId}}" method="post">
+				<div class="row">
+					<h5 class="mx-auto">Task</h5>
+				</div>
+				<div class="row">
+					<input class="mx-auto" type="text" name="task" value="{{task}}">
+				</div>
+				<div class="row mt-3">
+					<h5 class="mx-auto">Task Status</h5>
+				</div>
+
+				<div class="row">
+
+					<select name="task_status">
+						<option value="todo">To Do</option>
+						<option value="doing">Doing</option>
+						<option value="done">Done</option>
+					</select>
+				</div>
+
+				<div class="row mt-3">
+					<button type="submit" value="submit" class="btn btn-primary mx-auto">Submit</button>
+				</div>
+			</form>
+		</div>
+
+
+
+	</div>
+
+
+
 </div>
 
 {{!-- <div class="box">
 	<a class="button" href="#popup1{{id}}">Let </a>
 </div> --}}
-
