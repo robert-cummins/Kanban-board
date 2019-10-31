@@ -75,5 +75,12 @@ router.post('/update-task/:id', (req, res) => {
 })
 
 
+router.post('/delete-task/:id', (req, res) => {
+    db.deleteTask(req.params.id)
+    .then(() => {
+        res.redirect('/kanban/' + req.params.id)
+    })
+})
+
 
 module.exports = router;
