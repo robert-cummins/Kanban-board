@@ -12,4 +12,13 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/kanban/:id', (req, res) => {
+    df.getAllProjects(req.params.id, db = database)
+    .then(project => {
+        res.render('kanban', {
+            project
+        })
+    })
+})
+
 module.exports = router
