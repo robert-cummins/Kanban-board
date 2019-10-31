@@ -1,34 +1,35 @@
-<div>
+<div class="m-5">
   <div class="row">
-    <div class="col-md-4">
-      <h2>To Do</h2>
+    <div class="col-md">
+      <h2 class="text-center">To Do</h2>
 
-      {{#each tasks}}
-      {{#if done}}
+      {{!-- {{#each tasks}}
+      {{#if done}} --}}
       {{>task-card}}
-      {{/if}}
-      {{/each}}
+      {{>task-card}}
+      {{!-- {{/if}}
+      {{/each}} --}}
+    </div>
+    <div class="col-md border-left border-right border-secondary">
+      <h2 class="text-center">Doing</h2>
 
-      <div class="col-md-4">
-        <h2>Doing</h2>
+      {{!-- {{#each tasks}}
+      {{#if done}} --}}
+      {{>task-card}}
+      {{!-- {{/if}}
+      {{/each}} --}}
 
-        {{#each tasks}}
-        {{#if done}}
-        {{>task-card}}
-        {{/if}}
-        {{/each}}
+    </div>
 
-      </div>
+    <div class="col-md">
+      <h2 class="text-center">Done</h2>
 
-      <div class="col-md-4">
-        <h2>Done</h2>
+      {{!-- {{#each tasks}}
+      {{#if done}} --}}
+      {{>task-card}}
+      {{!-- {{/if}}
+      {{/each}} --}}
 
-        {{#each tasks}}
-        {{#if done}}
-        {{>task-card}}
-        {{/if}}
-        {{/each}}
-
-      </div>
     </div>
   </div>
+</div>

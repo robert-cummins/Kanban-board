@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
     df.getAllProjects()
     .then(projects => {
-        res.render('home', {
+        res.render('kanban', {
             projects
         })
     })
