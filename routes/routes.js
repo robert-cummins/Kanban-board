@@ -57,12 +57,15 @@ router.post('/add-task/:id', (req, res) => {
     console.log(newTask)
     db.addTask(newTask)
     .then(() => {
-        res.redirect('/')
+        res.redirect('/kanban/' + req.params.id)
     })
 })
 
 router.post('update-task', (req, res) => {
-    db.updateTask()
+    db.updateTask(req.params.id, req.body.task_status, req.body.task)
+    .then(() => {
+        res.redirect('kanban/' + req.params.id)
+    })
 })
 
 
