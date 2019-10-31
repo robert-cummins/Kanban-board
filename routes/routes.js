@@ -36,9 +36,26 @@ router.get("/kanban/:id", (req, res) => {
   
     res.render("kanban", {
       projects: project,
-      name: project[0].name
+      name: project[0].name,
     });
   });
+
+//   <input type="hidden" value={{projectId}} name="projectId" />
 });
+
+router.post('/add-task', (req, res) => {
+
+ 
+    let newTask = {
+        taskId: req.body.projectId, //hidden input on form
+        task: req.body.task,
+        status: req.body.status
+    }
+    console.log(newTask)
+    df.addTask(newTask)
+    .then(() => {
+        res.redirect('/')
+    })
+})
 
 module.exports = router;
