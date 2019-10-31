@@ -30,6 +30,11 @@ function updateTask(id, status, task, db = database){
         
 }
 
+function deleteTask(id, db = database){
+    return db('tasks')
+    .where('taskId', id).delete()
+}
+
 
     
 
@@ -39,5 +44,6 @@ module.exports = {
   getProject,
   getTasksForProject,
   addTask,
-  updateTask
+  updateTask,
+  deleteTask
 };
