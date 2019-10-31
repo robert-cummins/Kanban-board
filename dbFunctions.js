@@ -19,13 +19,25 @@ function getTasksForProject(projectId, db = database) {
     .select();
 }
 
-function addTask(task, db = database) {
-  return db("tasks").insert(task);
+function addTask(task, db = database){
+    return db('tasks').insert(task)
 }
+
+function updateTask(id, status, task, db = database){
+    return db('tasks')
+        .where("taskId", id)
+        .update({task_status: status, task: task})
+        
+}
+
+
+    
+
 
 module.exports = {
   getAllProjects,
   getProject,
   getTasksForProject,
-  addTask
+  addTask,
+  updateTask
 };
