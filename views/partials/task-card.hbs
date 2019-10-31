@@ -17,12 +17,12 @@
 	</div>
 
 		<div class="collapse dropdown m-3" id="formEditTask{{taskId}}">
-			<form class="mx-auto" action="/edit-task/{{taskId}}" method="post">
+			<form class="mx-auto" action="/update-task/{{project_id}}/{{taskId}}" method="post">
 				<div class="row">
 					<h5 class="mx-auto">Task</h5>
 				</div>
 				<div class="row">
-					<input class="mx-auto" type="text" name="task" placeholder="{{task}}">
+					<input class="mx-auto" type="text" name="task" value="{{task}}">
 				</div>
 				<div class="row mt-3">
 					<h5 class="mx-auto">Task Status</h5>
