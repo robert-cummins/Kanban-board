@@ -46,19 +46,23 @@ router.get("/kanban/:id", (req, res) => {
 //   <input type="hidden" value={{projectId}} name="projectId" />
 });
 
-router.post('/add-task', (req, res) => {
+router.post('/add-task/:id', (req, res) => {
 
  
     let newTask = {
-        taskId: req.body.projectId, //hidden input on form
+        project_id: req.params.id, //hidden input on form
         task: req.body.task,
-        status: req.body.status
+        task_status: req.body.task_status
     }
     console.log(newTask)
-    df.addTask(newTask)
+    db.addTask(newTask)
     .then(() => {
         res.redirect('/')
     })
+})
+
+router.post('update-task', (req, res) => {
+    db.updateTask()
 })
 
 
