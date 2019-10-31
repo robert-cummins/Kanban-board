@@ -37,7 +37,6 @@ router.get("/kanban/:id", (req, res) => {
     res.render("kanban", {
       projects: project,
       name: project[0].name,
-      projectId: req.params.id
     });
   });
 
