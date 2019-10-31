@@ -5,16 +5,17 @@
 
 
 
-	<div class= "row" >
+		<div class="row">
 			<div class="col-md-6">
 				<button href="#formEditTask{{taskId}}" data-toggle="collapse" class="btn btn-primary">Edit</button>
 
 			</div>
 			<div class="col-md-6">
-				<button href="#" data-toggle="collapse" class="btn btn-primary">Delete</button>
-
+				<form class="mx-auto" action='/delete-task/{{project_id}}/{{taskId}}' method='POST'>
+					<button data-toggle="collapse" class="btn btn-primary">Delete</button>
+				</form>
 			</div>
-	</div>
+		</div>
 
 		<div class="collapse dropdown m-3" id="formEditTask{{taskId}}">
 			<form class="mx-auto" action="/update-task/{{project_id}}/{{taskId}}" method="post">

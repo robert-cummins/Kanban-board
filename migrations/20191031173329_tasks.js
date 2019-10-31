@@ -4,6 +4,7 @@ exports.up = function (knex, Promise) {
       table.increments('taskId')
       table.string('task')
       table.string('task_status')
+      table.string('user_name')
       table.integer('project_id')
     })
   }
