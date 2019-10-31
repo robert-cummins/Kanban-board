@@ -14,7 +14,7 @@ function getTasksForProject(projectId, db = database){
     return db('projects')
     .where('projectId', projectId)
     .join('tasks', 'projects.projectId', 'project_id').select()
-    .then(tasks => {console.log(tasks)})
+    
     
 }
 
@@ -25,6 +25,3 @@ module.exports = {
     getTasksForProject
 }
 
-1// getProjects(database)
-// getProject(2, database)
-// getTasksForProject(1, database)
