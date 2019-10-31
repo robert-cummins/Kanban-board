@@ -7,7 +7,7 @@ function getAllProjects(db = database){
 }
 
 function getProject(id, db = database){
-    return db('projects').where('projectId', id).first().then(project => {console.log(project)})
+    return db('projects').where('projectId', id).first()
 }
 
 
@@ -16,4 +16,4 @@ module.exports = {
 }
 
 1// getProjects(database)
-getProject(2, database)
+// getProject(2, database)
