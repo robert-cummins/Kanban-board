@@ -1,4 +1,4 @@
-<div class="m-5">
+<div class="m-5 ">
   <div class="row mx-auto text-center pb-5">
     <div class="col-md-6">
 
@@ -6,11 +6,49 @@
       <h2>{{name}}</h2>
 
     </div>
+
+
     <div class="col-md-6">
-      <button href="" class="btn btn-primary">Add Task</button>
+      <button href="#formAddTask" data-toggle="collapse" class="btn btn-primary">Add Task</button>
 
     </div>
+
+    <div class="collapse dropdown m-3" id="formAddTask">
+      <form class="mx-auto" action="/add-task/{{projectId}}" method="post">
+        <div class="row">
+          <h5 class="mx-auto">Task</h5>
+        </div>
+        <div class="row">
+          <input class="mx-auto" type="text" name="task" placeholder="Name of Task" required>
+        </div>
+        <div class="row mt-3">
+          <h5 class="mx-auto">Task Status</h5>
+        </div>
+
+        <div class="row">
+
+          <select name="task_status">
+            <option value="todo">To Do</option>
+            <option value="todo">Doing</option>
+            <option value="todo">Done</option>
+          </select>
+        </div>
+
+        <div class="row mt-3">
+          <button type="submit" value="submit" class="btn btn-primary mx-auto">Submit</button>
+        </div>
+      </form>
+    </div>
+
+
   </div>
+
+
+
+
+
+
+
   <div class="row">
     <div class="col-md">
       <h2 class="text-center">To Do</h2>
