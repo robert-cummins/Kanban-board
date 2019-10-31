@@ -1,13 +1,34 @@
 <div>
   <div class="row">
     <div class="col-md-4">
-      
-    </div>
-    <div class="col-md-4">
+      <h2>To Do</h2>
 
-    </div>
-    <div class="col-md-4">
+      {{#each tasks}}
+      {{#if done}}
+      {{>task-card}}
+      {{/if}}
+      {{/each}}
 
+      <div class="col-md-4">
+        <h2>Doing</h2>
+
+        {{#each tasks}}
+        {{#if done}}
+        {{>task-card}}
+        {{/if}}
+        {{/each}}
+
+      </div>
+
+      <div class="col-md-4">
+        <h2>Done</h2>
+
+        {{#each tasks}}
+        {{#if done}}
+        {{>task-card}}
+        {{/if}}
+        {{/each}}
+
+      </div>
     </div>
   </div>
-</div>
