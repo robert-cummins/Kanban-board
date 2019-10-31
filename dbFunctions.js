@@ -19,8 +19,16 @@ function getTasksForProject(projectId, db = database) {
     .select();
 }
 
+function addTask(task, db = connection){
+    return db('tasks').insert(task)
+}
+
+    
+
+
 module.exports = {
   getAllProjects,
   getProject,
-  getTasksForProject
+  getTasksForProject,
+  addTask
 };
