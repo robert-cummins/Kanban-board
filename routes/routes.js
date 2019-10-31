@@ -29,15 +29,18 @@ router.get("/", (req, res) => {
 // })
 
 router.get("/kanban/:id", (req, res) => {
-  db.getTasksForProject(req.params.id).then(project => {
-    // let data = {
-    //     projects: project,
-    //     name: project[0].name
-  
-    res.render("kanban", {
-      projects: project,
-      name: project[0].name
-    });
+  db.getTasksForProject(req.params.id).then(tasks => {
+    for (task of tasks) {
+      if (task.task_status == "todo") {
+        task.todo = "true";
+      } else if (task.task_status == "doing") {
+        task.doing = "true";
+      } else if (task.task_status == "done") {
+        task.done = "done";
+      }
+    }
+
+    res.render("kanban", { tasks: tasks });
   });
 });
 
