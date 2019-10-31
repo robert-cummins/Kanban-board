@@ -1,5 +1,5 @@
 const express = require('express')
-const df = require('./dbFunctions')
+const df = require('../dbFunctions')
 
 const router = express.Router()
 
@@ -11,3 +11,5 @@ router.get('/', (req, res) => {
         })
     })
 })
+
+module.exports = router
