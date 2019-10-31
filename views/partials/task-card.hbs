@@ -1,0 +1,22 @@
+<div class="card m-3">
+	<div class="card-header">{{task}}</div>
+	<div class="card-body">
+		<p class="card-text">Task Description</p>
+		<a href="#popup1{{id}}" class="btn btn-primary">Edit</a>
+		<a href="#" class="btn btn-primary">Delete</a>
+	</div>
+</div>
+
+{{!-- <div class="box">
+	<a class="button" href="#popup1{{id}}">Let </a>
+</div> --}}
+
+<div id="popup1{{id}}" class="overlay">
+	<div class="popup">
+		<h2>Here i am</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Thank to pop me out of that button, but now i'm done so you can close this window.
+		</div>
+	</div>
+</div>

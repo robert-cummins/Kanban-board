@@ -1,13 +1,57 @@
-<div>
-  <div class="row">
-    <div class="col-md-4">
-      
-    </div>
-    <div class="col-md-4">
+<div class="m-5">
+  <div class="row mx-auto text-center pb-5">
+    <div class="col-md-6">
+
+
+      <h2>{{name}}</h2>
 
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
+      <button class="btn btn-primary">Add Task</button>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md">
+      <h2 class="text-center">To Do</h2>
+
+      {{#each projects}}
+      {{!-- {{#if done}} --}}
+      {{>task-card}}
+      {{!-- {{/if}} --}}
+      {{/each}}
+
+    </div>
+    <div class="col-md border-left border-right border-secondary">
+      <h2 class="text-center">Doing</h2>
+
+      {{#each projects}}
+      {{!-- {{#if done}} --}}
+      {{>task-card}}
+      {{!-- {{/if}} --}}
+      {{/each}}
+
+    </div>
+
+    <div class="col-md">
+      <h2 class="text-center">Done</h2>
+
+      {{#each projects}}
+      {{!-- {{#if done}} --}}
+      {{>task-card}}
+      {{!-- {{/if}} --}}
+      {{/each}}
 
     </div>
   </div>
 </div>
+{{!-- 
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Here i am</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Thank to pop me out of that button, but now i'm done so you can close this window.
+		</div>
+	</div>
+</div> --}}
