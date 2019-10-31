@@ -30,8 +30,13 @@ router.get("/", (req, res) => {
 
 router.get("/kanban/:id", (req, res) => {
   db.getTasksForProject(req.params.id).then(project => {
+    // let data = {
+    //     projects: project,
+    //     name: project[0].name
+  
     res.render("kanban", {
-      project
+      projects: project,
+      name: project[0].name
     });
   });
 });
