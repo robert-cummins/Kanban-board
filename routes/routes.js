@@ -41,4 +41,18 @@ router.get("/kanban/:id", (req, res) => {
   });
 });
 
+router.post('/add-task', (req, res) => {
+    let newTask = {
+        id: req.params.id,
+        name: req.body.name,
+        task: req.body.task,
+        status: req.body.status
+    }
+    .console.log(newTask)
+    df.addTask(newTask)
+    .then(() => {
+        res.redirect('/')
+    })
+})
+
 module.exports = router;
