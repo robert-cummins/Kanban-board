@@ -35,6 +35,10 @@ function deleteTask(id, db = database){
     .where('taskId', id).delete()
 }
 
+function addProject(project, db = database){
+    return db('projects').insert(project)
+}
+
 
     
 
@@ -45,5 +49,6 @@ module.exports = {
   getTasksForProject,
   addTask,
   updateTask,
-  deleteTask
+  deleteTask,
+  addProject
 };
