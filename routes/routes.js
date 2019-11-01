@@ -63,7 +63,7 @@ router.post("/add-task/:id", (req, res) => {
     task_status: req.body.task_status,
     user_name: req.body.user_name
   };
-  console.log(newTask);
+
   db.addTask(newTask).then(() => {
     res.redirect("/kanban/" + req.params.id);
   });
