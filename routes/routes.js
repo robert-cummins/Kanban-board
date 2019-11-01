@@ -3,44 +3,32 @@ const db = require("../dbFunctions");
 
 const router = express.Router();
 
+let projectArr
+
 router.get("/", (req, res) => {
   db.getAllProjects().then(projects => {
+      
+    projectArr = projects
+
     res.render("home", {
-      projects
+      projects,
+      projectArr
     });
   });
 });
 
-router.get("/", (req, res) => {
-  db.getAllProjects().then(projects => {
-    res.render("home", {
-      projects
-    });
-  });
-});
-//don't really need this, same as below but without info of tasks todo.
-// router.get('/kanban/:id', (req, res) => {
-//     db.getProject(req.params.id)
-//     .then(project => {
-//         res.render('kanban', {
-//             project
-//         })
-//     })
-// })
 
 router.get("/kanban/:id", (req, res) => {
   db.getTask(req.params.id).then(task => {
-
 
     if (task.length == 0) {
         db.getProject(req.params.id).then(project => {
             res.render("kanban", {
                 name: project.name,
-                projectId: req.params.id
+                projectId: req.params.id,
+                projectArr: projectArr
             })
-
         })
-
     } 
     
     else {
@@ -58,8 +46,10 @@ router.get("/kanban/:id", (req, res) => {
         res.render("kanban", {
           tasks: tasks,
           name: tasks[0].name,
-          projectId: tasks[0].project_id
+          projectId: tasks[0].project_id,
+          projectArr: projectArr
         });
+        
       });
     }
   });

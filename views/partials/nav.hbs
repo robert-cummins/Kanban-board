@@ -12,10 +12,11 @@
           Projects
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          {{!-- {{#each projects}} --}}
-          <a class="dropdown-item" href="/kanban/1">Clean the house</a>
-          <a class="dropdown-item" href="/kanban/2">Build a house</a>
-          {{!-- {{/each}} --}}
+
+          {{#each projectArr}}
+          <a class="dropdown-item" href="/kanban/{{projectId}}">{{name}}</a>
+
+          {{/each}}
         </div>
       </li>
       <li class="nav-item dropdown">
