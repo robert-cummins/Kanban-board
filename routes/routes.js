@@ -65,36 +65,13 @@ router.get("/kanban/:id", (req, res) => {
   });
 });
 
-//             db.getTasksForProject(req.params.id)
-//             .then(tasks => {
-//                 for (task of tasks) {
-//                 if (task.task_status == "todo") {
-//                       task.todo = "true";
-//                 } else if (task.task_status == "doing") {
-//                     task.doing = "true";
-//                 } else if (task.task_status == "done") {
-//                     task.done = "done";
-//                 }
-//             }
-
-//             res.render("kanban",
-//             {
-//                 tasks: tasks,
-//                 name : tasks[0].name,
-//                 projectId : tasks[0].project_id
-//             })
-//     })
-
-//   }
-// })
-
-//   <input type="hidden" value={{projectId}} name="projectId" />
 
 router.post("/add-task/:id", (req, res) => {
   let newTask = {
     project_id: req.params.id, //hidden input on form
     task: req.body.task,
-    task_status: req.body.task_status
+    task_status: req.body.task_status,
+    user_name: req.body.user_name
   };
   console.log(newTask);
   db.addTask(newTask).then(() => {
