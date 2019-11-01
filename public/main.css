@@ -1,12 +1,16 @@
 body {
-  background-color: beige;
+  background-color: #fcf9ea;
 }
 
 h1 {
   text-align: center;
   font-family: Tahoma, Arial, sans-serif;
-  color: #06D85F;
+  color: #06d85f;
   margin: 80px 0;
+}
+
+.navbar {
+  background-color: #216583;
 }
 
 .overlay {
@@ -51,18 +55,18 @@ h1 {
   color: #333;
 }
 .popup .close:hover {
-  color: #06D85F;
+  color: #06d85f;
 }
 .popup .content {
   max-height: 30%;
   overflow: auto;
 }
 
-@media screen and (max-width: 700px){
-  .box{
+@media screen and (max-width: 700px) {
+  .box {
     width: 70%;
   }
-  .popup{
+  .popup {
     width: 70%;
   }
 }
