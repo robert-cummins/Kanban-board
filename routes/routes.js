@@ -95,4 +95,10 @@ router.post("/add-project", (req, res) => {
   });
 });
 
+router.post("/delete-project/:id", (req, res) => {
+    db.deleteProject(req.params.id).then(() => {
+        res.redirect("/")
+    })
+})
+
 module.exports = router;

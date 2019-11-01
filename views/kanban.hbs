@@ -8,9 +8,15 @@
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-3 my-2">
       <button href="#formAddTask" data-toggle="collapse" class="btn btn-primary">Add Task</button>
 
+    </div>
+
+    <div class="col-md-3 my-2">
+      <form action="/delete-project/{{projectId}}" method="post">
+        <button class="btn btn-primary">Delete Project</button>
+      </form>
     </div>
 
     <div class="collapse dropdown m-3" id="formAddTask">

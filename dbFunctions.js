@@ -46,6 +46,10 @@ function addProject(project, db = database){
     return db('projects').insert(project)
 }
 
+function deleteProject(id, db = database) {
+  return db('projects')
+  .where("projectId", id).delete()
+}
 
     
 
@@ -58,5 +62,6 @@ module.exports = {
   updateTask,
   deleteTask,
   addProject,
-  getTask
+  getTask,
+  deleteProject
 };
