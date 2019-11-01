@@ -82,5 +82,15 @@ router.post('/delete-task/:projectId/:id', (req, res) => {
     })
 })
 
+router.post('/add-project/:id', (req, res) => {
+    let newProject = {
+      name: req.body.name
+    }
+    db.addProject(newProject)
+    .then(() => {
+        res.redirect('/kanban/' + req.params.id)
+    })
+})
+
 
 module.exports = router;
