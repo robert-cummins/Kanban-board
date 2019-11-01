@@ -1,7 +1,7 @@
 <div class="card m-3">
 	<div class="card-header">{{task}}</div>
 	<div class="card-body">
-		<p class="card-text">Task Description</p>
+		<p class="card-text">{{user_name}}</p>
 
 
 
@@ -24,6 +24,19 @@
 				</div>
 				<div class="row">
 					<input class="mx-auto" type="text" name="task" value="{{task}}">
+				</div>
+				<div class="row mt-3">
+					<h5 class="mx-auto">Name</h5>
+				</div>
+
+				<div class="row">
+
+					<select name="user_name">
+						<option value="Cherise">Cherise</option>
+						<option value="Rob">Rob</option>
+						<option value="Ethan">Ethan</option>
+						<option value="Cass">Cass</option>
+					</select>
 				</div>
 				<div class="row mt-3">
 					<h5 class="mx-auto">Task Status</h5>

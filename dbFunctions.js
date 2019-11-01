@@ -23,10 +23,10 @@ function addTask(task, db = database){
     return db('tasks').insert(task)
 }
 
-function updateTask(id, status, task, db = database){
+function updateTask(id, status, task, user_name, db = database){
     return db('tasks')
         .where("taskId", id)
-        .update({task_status: status, task: task})
+        .update({task_status: status, task: task, user_name: user_name})
         
 }
 

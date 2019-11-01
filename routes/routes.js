@@ -68,7 +68,7 @@ router.post('/add-task/:id', (req, res) => {
 })
 
 router.post('/update-task/:projectId/:id', (req, res) => {
-    db.updateTask(req.params.id, req.body.task_status, req.body.task)
+    db.updateTask(req.params.id, req.body.task_status, req.body.task, req.body.user_name)
     .then(() => {
         res.redirect('/kanban/' + req.params.projectId)
     })
