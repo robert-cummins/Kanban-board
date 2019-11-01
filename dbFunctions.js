@@ -12,11 +12,18 @@ function getProject(projectId, db = database) {
     .first();
 }
 
+function getTask(projectId, db = database) {
+  return db("tasks")
+    .where("project_id", projectId)
+    .select()
+}
+
 function getTasksForProject(projectId, db = database) {
-  return db("projects")
+    return db("projects")
     .where("projectId", projectId)
     .join("tasks", "projects.projectId", "project_id")
     .select();
+  
 }
 
 function addTask(task, db = database){
@@ -50,5 +57,6 @@ module.exports = {
   addTask,
   updateTask,
   deleteTask,
-  addProject
+  addProject,
+  getTask
 };
