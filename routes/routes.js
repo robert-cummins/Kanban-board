@@ -67,13 +67,20 @@ router.post('/add-task/:id', (req, res) => {
     })
 })
 
-router.post('update-task', (req, res) => {
+router.post('/update-task/:projectId/:id', (req, res) => {
     db.updateTask(req.params.id, req.body.task_status, req.body.task)
     .then(() => {
-        res.redirect('kanban/' + req.params.id)
+        res.redirect('/kanban/' + req.params.projectId)
     })
 })
 
+
+router.post('/delete-task/:projectId/:id', (req, res) => {
+    db.deleteTask(req.params.id)
+    .then(() => {
+        res.redirect('/kanban/' + req.params.projectId)
+    })
+})
 
 
 module.exports = router;
